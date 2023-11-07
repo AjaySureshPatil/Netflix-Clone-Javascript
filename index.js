@@ -23,7 +23,9 @@ function init() {
 function fetchTrendingMovies() {
   fetchAndbuildMovieSection(apiPath.fetchTrending, "Trending Now")
     .then(list => {
-      buildBannerSection(list[5]);
+      // buildBannerSection(list[5]);
+      const randomIndex = parseInt(Math.random() * list.length);
+      buildBannerSection(list[randomIndex]);
     }).catch(err => {
       console.error(err);
     });
